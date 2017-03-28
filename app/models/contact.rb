@@ -1,9 +1,9 @@
 class Contact < ApplicationRecord
+	has_many :phones
+
 	validates_presence_of :firstname
 	validates_presence_of :lastname
 	validates :email, presence: true, uniqueness: true
-
-	has_many :phones
 
 	def name
 		[firstname, lastname].join(' ')
